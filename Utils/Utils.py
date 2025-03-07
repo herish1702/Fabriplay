@@ -1,5 +1,4 @@
-import os
-
+import os    
 def get_current_url(driver):
     return driver.current_url
 
