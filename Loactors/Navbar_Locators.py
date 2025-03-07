@@ -1,0 +1,10 @@
+class Navbar_Locators:
+    dashboard = "//span[text()='Dashboard']"
+    order = "//span[text()='Orders']"
+    tasks = "//span[text()='Tasks']"
+    todays_task = "//span[text()='Today's Tasks']"
+    check_appointment = "//span[text()='Check Availability']"
+    appointment = "//span[text()='Appointments']"
+    design_board = "//span[text()='Design board']"
+    crm = "//span[text()='CRM']"
+    sourcing = "//span[text()='Sourcing']"
