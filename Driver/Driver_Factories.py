@@ -15,8 +15,8 @@ def initialize_drivers():
             elif browser == "firefox":
                 drivers[browser] = webdriver.Firefox()
 
-            elif browser == "edge":
-                drivers[browser] = webdriver.Edge()
+            # elif browser == "edge":
+            #    drivers[browser] = webdriver.Edge()
 
             elif browser == "safari":
                 drivers[browser] = webdriver.Safari()

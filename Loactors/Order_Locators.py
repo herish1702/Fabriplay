@@ -1,10 +1,23 @@
-from Data.Dynamic_Data import dynamic_data
-
-
 class Order_Locators:
     create_order_cta = "//button[text()='+ Create order']"
     client_number = "//input[@placeholder='Phone number']"
     client_name = "clientName"
     client_address = "address"
-    reference_drop_down = "//label[text()='Reference']"
-    reference_option = f"//li[text()='{dynamic_data.client_reference}']"
+    reference_drop_down = "//div[@tabindex='0']/span"
+    reference_option = "//li[text()='Instagram']"
+    product_delete_icon = "//*[name()='svg' and @data-testid='DeleteIcon']"
+    add_product_cta = "//button[text()='Add Product']"
+    product_name = f"products.0.productName"
+    product_type_drop_down = "//label[text()='Product Type']/parent::div"
+    product_type = f"products.0.productTypeId"
+    product_type_option = "//li[text()='dress']"
+    delivery_date = f"products.0.deliveryDate"
+    product_amount = f"products.0.productAmount"
+    timeline_destination = "//h4[text()='Timeline']"
+    cutting_task_cta = " //span[text()='CUTTING']"
+    stiching_task_cta = "//span[text()='STICHING']"
+    embroiding_task_cta = "//span[text()='EMBROIDING']"
+    delivery_task_cta = "//span[text()='DELIVERY']"
+    advance_received_field = "advanceReceived"
+    add_product_cta = "//button[text()='Add Product']"
+    place_order_cta = "//button[text()='Create order']"
