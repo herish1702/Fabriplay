@@ -1,9 +1,6 @@
-import time
-
 from Action.Perform_Driver_Action import perform_find_element, perform_send_keys, perform_click
 from Loactors.Sign_In_Locators import Sign_in_Locators
-from Utils.Utils import get_data_from_webelement, verify_webelement_displayed, take_full_screenshot, \
-    get_current_url
+from Utils.Utils import get_data_from_webelement
 
 
 def enter_password(driver, password):
@@ -13,7 +10,7 @@ def enter_password(driver, password):
 
 def click_signin_cta(driver):
     signin = perform_find_element(driver, 'xpath', Sign_in_Locators.sign_in_cta)
-    perform_click(signin)
+    perform_click(driver,signin)
 
 def do_signin(driver,password):
     enter_password(driver,password)

@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+
 def get_date(days_to_add):
     current_date = datetime.now().date()
     future_date = current_date + timedelta(days=days_to_add)
@@ -16,8 +17,14 @@ class dynamic_data:
     product_count = 2
     product_name = 'Shirt'
     delivery_date = get_date(7)
+    print(delivery_date)
     product_amount = '1697'
     advance_amount = '950'
+    note = 'This is an Automation Order'
+    fabric_type = 'Silk'
+    fabric_color = 'Black'
+    fabric_meter = '10'
+    fabric_meter_price = '12'
 
 class dynamic_url:
     login_url = 'login'

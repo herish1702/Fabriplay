@@ -8,7 +8,7 @@ from Utils.Utils import get_data_from_webelement, move_to_element_and_click, per
 def click_create_order(driver):
     click_navbar_order(driver)
     CTA = perform_find_element(driver, "xpath", Order_Locators.create_order_cta)
-    perform_click(CTA)
+    move_to_element_and_click(driver,CTA)
     enter_order_details(driver)
     add_product_details(driver)
     enter_product_details(driver)
@@ -25,9 +25,9 @@ def enter_order_details(driver):
 
 def add_product_details(driver):
     delete_icon = perform_find_element(driver, "xpath", Order_Locators.product_delete_icon)
-    perform_click(delete_icon)
+    move_to_element_and_click(driver, delete_icon)
     add_product_cta = perform_find_element(driver, "xpath", Order_Locators.add_product_cta)
-    perform_click(add_product_cta)
+    perform_click(driver,add_product_cta)
 
 def enter_product_details(driver):
     enter_product_name(driver)
@@ -65,7 +65,7 @@ def enter_client_reference(driver):
     reference_drop_down = perform_find_element(driver, "xpath", Order_Locators.reference_drop_down)
     move_to_element_and_click(driver,reference_drop_down)
     reference_option = perform_find_element(driver, "xpath", Order_Locators.reference_option)
-    perform_click(reference_option)
+    perform_click(driver,reference_option)
 
 
 def enter_product_name(driver):
@@ -74,13 +74,15 @@ def enter_product_name(driver):
 
 def select_product_type(driver):
     product_type_drop_down = perform_find_element(driver, "xpath", Order_Locators.product_type_drop_down)
-    perform_click(product_type_drop_down)
+    perform_click(driver,product_type_drop_down)
     product_type_option = perform_find_element(driver, "xpath", Order_Locators.product_type_option)
-    perform_click(product_type_option)
+    perform_click(driver,product_type_option)
 
 def enter_delivery_date(driver):
     delivery_date = perform_find_element(driver, "name", Order_Locators.delivery_date)
     perform_send_keys(delivery_date,dynamic_data.delivery_date)
+    print(f"Date Entered : {get_data_from_webelement(delivery_date)}")
+
 
 def enter_product_ammount(driver):
     product_ammount_field = perform_find_element(driver, "name", Order_Locators.product_amount)
@@ -112,7 +114,7 @@ def enter_advance_amount(driver):
 
 def click_place_order(driver):
     place_order_cta = perform_find_element(driver, "xpath", Order_Locators.place_order_cta)
-    perform_click(place_order_cta)
+    perform_click(driver,place_order_cta)
 
 
     

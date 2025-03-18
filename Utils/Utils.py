@@ -18,9 +18,6 @@ def take_full_screenshot(driver):
         count += 1
     driver.save_screenshot(full_path)
 
-def verify_webelement_displayed(webelement):
-    return webelement.is_displayed()
-
 def move_to_element_and_click(driver, webelement):
     actions = ActionChains(driver)
     actions.move_to_element(webelement).click().perform()
@@ -31,4 +28,15 @@ def perform_drag_and_drop(driver, source, target):
     
 def perform_scroll_to(driver,webelement):
     driver.execute_script("arguments[0].scrollIntoView();", webelement)
+
+def perform_upload_file(upload_webelement, file_path):
+    upload_webelement.send_keys(file_path)
+
+def move_to_element_and_send(driver, webelement, filepath):
+    actions = ActionChains(driver)
+    actions.move_to_element(webelement).send_keys(filepath).perform()
+
+def clear_existing_data(webelement):
+    webelement.clear()
+
 

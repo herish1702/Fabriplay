@@ -11,16 +11,17 @@ from selenium.webdriver.safari.options import Options as SafariOptions
 def initialize_driver():
     chrome_options = Options()
     # chrome_options.add_argument("--headless")
-    # chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()
-    driver.get(static_data.url)
+    # driver.get(static_data.url)
+    driver.get(static_data.url + dynamic_url.login_url)
     return driver
 
 def initialize_firefox_driver():
     firefox_options = FirefoxOptions()
     # firefox_options.add_argument("--headless")  # Uncomment for headless mode
-    # firefox_options.set_preference("detach", True) 
+    firefox_options.set_preference("detach", True) 
     driver = webdriver.Firefox(options=firefox_options)
     driver.maximize_window()
     driver.get(static_data.url)
@@ -29,17 +30,15 @@ def initialize_firefox_driver():
 def initialize_edge_driver():
     edge_options = EdgeOptions()
     # edge_options.add_argument("--headless")  # Uncomment for headless mode
-    # edge_options.set_preference("detach", True) 
+    edge_options.set_preference("detach", True) 
     driver = webdriver.Edge(options=edge_options)
     driver.maximize_window()
     driver.get(static_data.url)
     return driver
 
 def initialize_safari_driver():
-    safari_options = SafariOptions()
-    # safari_options.add_argument("--headless")  # Uncomment for headless mode
-    # safari_options.set_preference("detach", True) 
-    driver = webdriver.Safari(options=safari_options)
+    driver = webdriver.Safari()
     driver.maximize_window()
     driver.get(static_data.url)
     return driver
+

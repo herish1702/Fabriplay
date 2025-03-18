@@ -3,8 +3,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def perform_click(webelement):
-    webelement.click()
+def perform_click(driver, webelement):
+    WebDriverWait(driver, 60).until(EC.element_to_be_clickable(webelement)).click()
 
 def perform_send_keys(webelement, data):
     webelement.send_keys(data)

@@ -4,4 +4,4 @@ from Loactors.Home_Locators import Home_locators
 
 def click_login_cta(driver):
     login_cta = perform_find_element(driver,"xpath",Home_locators.login_cta)
-    perform_click(login_cta)
+    perform_click(driver,login_cta)

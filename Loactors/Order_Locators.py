@@ -6,6 +6,7 @@ class Order_Locators:
     reference_drop_down = "//div[@tabindex='0']/span"
     reference_option = "//li[text()='Instagram']"
     product_delete_icon = "//*[name()='svg' and @data-testid='DeleteIcon']"
+                        #   "//*[name()='svg' and @data-testid='DeleteIcon']"
     add_product_cta = "//button[text()='Add Product']"
     product_name = f"products.0.productName"
     product_type_drop_down = "//label[text()='Product Type']/parent::div"

@@ -10,7 +10,7 @@ def enter_username(driver, username):
 
 def click_continue_cta(driver):
     continue_cta= perform_find_element(driver, 'xpath', Login_Locator.continue_cta)
-    perform_click(continue_cta)
+    perform_click(driver,continue_cta)
 
 def do_login(driver, username):
     enter_username(driver,username)
